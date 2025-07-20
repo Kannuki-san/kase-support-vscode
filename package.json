@@ -1,0 +1,25 @@
+{
+  "name": "kase",
+  "displayName": "kase-vscode",
+  "description": "Kase Language Support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "kase",
+      "aliases": [" Kase", "kase"],
+      "extensions": [".ks"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "kase",
+      "scopeName": "source.kase",
+      "path": "./syntaxes/kase.tmLanguage.json"
+    }]
+  }
+}

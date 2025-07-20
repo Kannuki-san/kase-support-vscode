@@ -1,0 +1,58 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": " Kase",
+	"patterns": [
+		{"include": "#keywords"},
+		{"include": "#strings"},
+		{"include": "#comments"},
+		{"include": "#strings_single"},
+		{"include": "#number"}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.kase",
+				"match": "\\b(if|while|for|return|else if|else|while|for|break|def|return|print|input|open|close|puts|getline|alloc|set|get|str_empty)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.kase",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kase",
+					"match": "\\\\."
+				}
+			]
+		},
+		"strings_single": {
+			"name": "string.quoted.single.kase",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kase",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.kase",
+					"match": "#.*$"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.kase",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.kase"
+}
