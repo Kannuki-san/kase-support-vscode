@@ -16,14 +16,16 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         const projectRoot = vscode.workspace.workspaceFolders?.[0].uri.fsPath ?? '';
-        const pythonPath = path.join(projectRoot, 'python', 'kase_builder_full.py');
-        const exeFile = filePath.replace(/\.ks$/, '.exe');
+        const pythonPath = path.join(projectRoot, 'python', 'kase_build_full.py');
+        const basename = path.parse(filePath).name;
+        const outDir = path.join(projectRoot, 'out');
+        const exeFile = path.join(projectRoot, 'out', basename, `${basename}.exe`);
         const terminal = vscode.window.createTerminal('Kase Build & Run');
 
-        // 1. ビルド
         terminal.show();
+        // 1. ビルド（成果物は out/ ディレクトリへ）
         terminal.sendText(`python "${pythonPath}" "${filePath}"`);
-        // 2. 実行（適当なディレイの後や、ユーザーに「実行」指示でもOK）
+        // 2. 実行（ビルド後にout/のexeを実行）
         terminal.sendText(`"${exeFile}"`);
     });
 

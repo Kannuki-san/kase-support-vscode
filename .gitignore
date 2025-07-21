@@ -4,3 +4,4 @@ dist/
 .vscode/settings.jso
 node_modules/
 .tree*
+myscripts/
