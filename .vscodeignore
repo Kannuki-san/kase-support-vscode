@@ -1,4 +1,16 @@
 .vscode/**
 .vscode-test/**
+node_modules
+.vscode
+out/test
+test
+**/*.map
 .gitignore
-vsc-extension-quickstart.md
+.vscodeignore
+tsconfig.json
+package-lock.json
+.git
+.vscode-test
+src
+dist
+.tree*

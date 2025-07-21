@@ -1,0 +1,6 @@
+out/
+*.vsix
+dist/
+.vscode/settings.jso
+node_modules/
+.tree*
